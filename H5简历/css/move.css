@@ -1,4 +1,5 @@
 /* 上滑提示 */
+
 .up .up_icon_one {
     position: absolute;
     z-index: 10;
@@ -164,7 +165,6 @@
 
 /* 第三页展示 */
 
-
 .third_box {
     position: relative;
     width: 414px;
@@ -173,7 +173,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .third_move_one {
     position: absolute;
@@ -185,7 +184,7 @@
     animation: third_move_one 2s linear forwards;
 }
 
-.third_move_one ul .third_li{
+.third_move_one ul .third_li {
     height: 2rem;
     background: white;
     width: 16rem;
@@ -193,8 +192,12 @@
     margin-left: .2rem;
     border-radius: .1rem;
     font-size: 1rem;
+    color: rgba(255, 0, 234, 0.952);
+    box-shadow: .1rem .1rem .1rem #d4c7c7;
     opacity: 0;
+    padding-left: .4rem;
 }
+
 @keyframes third_move_one {
     0% {
         opacity: 0;
@@ -210,16 +213,37 @@
     }
 }
 
-.third_li_move{
+.third_li_move {
     animation: third_li_moves 1s linear forwards;
 }
-@keyframes third_li_moves{
-    0%{
+
+@keyframes third_li_moves {
+    0% {
         opacity: 0;
         transform: translateX(-10rem)
     }
-    100%{
+    100% {
         opacity: 1;
-        transform: translateX(0)
+        transform: translateX(1rem)
+    }
+}
+
+
+.third_move_title_one {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, .8);
+    transform: translate(0, -20rem);
+    animation: third_move_title_two 2s linear infinite;
+}
+
+@keyframes third_move_title_two {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

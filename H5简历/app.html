@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>个人介绍</title>
     <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
     <link rel="stylesheet" href="./css/move.css">
     <style>
@@ -100,11 +100,15 @@
             width: 2.4rem;
             height: 2.4rem;
             border-radius: 50%;
-            border: .15rem solid rgb(49, 47, 47);
+            border: .15rem solid rgb(245, 245, 245);
             padding: .1rem;
-            background: rgba(0,0,0,0.2);
-            animation: rotote 2s linear infinite;
+            background: rgba(255,255,255,.4);
+            animation: rotote 2s linear infinite paused;
             
+        }
+        .music .title{
+            position: absolute;
+            left: 2rem;
         }
         .music img{
             width: 100%;
@@ -172,6 +176,7 @@
                     <img class="bg" src="images/bg4.jpeg" alt="" style="width:100%">
                     <div class="itemMove ">
                         <div class="third_box">
+                            <div class="third_move_title_one">技能</div>
                             <div class="" id="third_move_one">
                                 <ul>
                                     <li class="third_li">1</li>
@@ -209,21 +214,21 @@
     </div>
     <script src="js/touch.js"></script>
     <script type="text/javascript">
-    console.log(1)
         var Music = document.getElementById('music')
         var audio = document.getElementById('audio')
         var onSwitch = false
         Music.onclick = function(e){
             if(!onSwitch){
                 audio.play();
+                Music.classList.add("playRo")
                 onSwitch = !onSwitch
             }else{
                 audio.pause();
-                audio.classList.add("pauseRo")
-                audio.style.animationPlayState = "paused!important";//准对chorme,Safari 的代码
+                Music.classList.remove("playRo")
                 onSwitch = !onSwitch
+                console.log("此时应该暂停")
             }
-            console.log(audio.style)
+            console.log(Music.style)
         }
 
     </script>
