@@ -73,7 +73,6 @@
         .audio {
             z-index: 10;
             top: 2rem;
-            right: -15rem;
             position: absolute;
             width: 17.5rem;
             height: 2.5rem;
@@ -93,15 +92,50 @@
                 opacity: 0;
             }
         }
+        .music{
+            position: fixed;
+            z-index: 11;
+            top: 1rem;
+            right: 1rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            border: .15rem solid rgb(49, 47, 47);
+            padding: .1rem;
+            background: rgba(0,0,0,0.2);
+            animation: rotote 2s linear infinite;
+            
+        }
+        .music img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        @keyframes rotote{
+            from{ transform: rotate(0deg)}to{transform: rotate(360deg)}
+        }
+
+
+        .playRo {
+            animation-play-state: running !important;
+        }
+ 
+        .pauseRo {
+            animation-play-state: paused !important;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="up">
-        <audio class="audio" controls>
-            <source src="music/bgMusic.mp3" type="audio/ogg">
-        </audio>
+        <div class="music" id="music">
+            <img src="./images/music.png" alt="">
+            <audio class="audio" id="audio" >
+                <source src="music/bgMusic.mp3" type="audio/ogg">
+            </audio>
+        </div>
+
         
         <span class="up_icon_one"></span>
         <span class="up_icon_two"></span>
@@ -175,21 +209,23 @@
     </div>
     <script src="js/touch.js"></script>
     <script type="text/javascript">
-        var index = index;
-        console.log('123')
-
-        var toTop = document.getElementsByClassName('toTop'[0]);
-
-        toTop.onclick = function () {
-            console.log('123')
+    console.log(1)
+        var Music = document.getElementById('music')
+        var audio = document.getElementById('audio')
+        var onSwitch = false
+        Music.onclick = function(e){
+            if(!onSwitch){
+                audio.play();
+                onSwitch = !onSwitch
+            }else{
+                audio.pause();
+                audio.classList.add("pauseRo")
+                audio.style.animationPlayState = "paused!important";//准对chorme,Safari 的代码
+                onSwitch = !onSwitch
+            }
+            console.log(audio.style)
         }
-        var div = document.getElementById('div')
 
-        console.log(index, "123")
-
-
-        var a = -12345
-        console.log(Math.abs(a/100))
     </script>
 
 
