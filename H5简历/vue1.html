@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <link rel="stylesheet" href="./css/move.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+
+        .up {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+        }
+
+        .div {
+            position: absolute;
+            width: 100vw;
+            height: 735rem;
+            background: #ccc;
+            transition: all .5s linear;
+
+        }
+
+        .translate {
+            transform: translateY(-735rem);
+        }
+
+        .div .item {
+            width: 25.875rem;
+            height: 46rem;
+        }
+
+        .box {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .firstPage {
+            background: url("./images/bg2.jpeg");
+        }
+
+        .item {
+            position: relative;
+            transition: all 2s linear;
+            overflow: hidden;
+        }
+
+        .item img {
+            position: absolute;
+        }
+
+        .item .bg {
+            height: 100%;
+        }
+
+        .audio {
+            z-index: 10;
+            top: 2rem;
+            right: -15rem;
+            position: absolute;
+            width: 17.5rem;
+            height: 2.5rem;
+            transition: big 1s infinite linear;
+        }
+
+        @keyframes big {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="up">
+        <audio class="audio" controls>
+            <source src="music/bgMusic.mp3" type="audio/ogg">
+        </audio>
+        
+        <span class="up_icon_one"></span>
+        <span class="up_icon_two"></span>
+
+        <div class="box">
+            <div class="div" id="div">
+                <div class="item firstPage">
+                    <img src="https://res.zhangu365.com/syspic/img/bfd6454966302ca2a3900484738e3f2a.png?x-oss-process=image/resize,w_600"
+                        alt="" style="width:100% ">
+                    <div class="itemMove styleOne">
+                        不希望有一天淹没在人群里
+                    </div>
+                </div>
+
+                <div class="item" >
+                    <img class="bg" src="images/bg3.jpeg" alt="" style="width:100%">
+                    <div class="itemMove ">
+                        <div id="one_first">1
+                            <div class="one_second" id="">个人信息 ABOUT ME</div>
+                        </div>
+                        <div id="one_third">
+                            <ul class="">
+                                <li>姓名：姜博健</li>
+                                <li>年龄：22（19年毕业）</li>
+                                <li>毕业院校：黑龙江大学</li>
+                                <li>专业：软件工程</li>
+                                <li>求职：web前端开发</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" >
+                    <img class="bg" src="images/bg4.jpeg" alt="" style="width:100%">
+                    <div class="itemMove ">
+                        <div class="third_box">
+                            <div class="" id="third_move_one">
+                                <ul>
+                                    <li class="third_li">1</li>
+                                    <li class="third_li">2</li>
+                                    <li class="third_li">3</li>
+                                    <li class="third_li">4</li>
+                                    <li class="third_li">5</li>
+                                    <li class="third_li">6</li>
+                                    <li class="third_li">7</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" >
+                        <img class="bg" src="images/bg5.jpg" alt="" style="width:100%">
+                    <div class="itemMove ">
+
+                    </div>
+                </div>
+                <div class="item" style="background: orange">
+                    <div class="itemMove ">
+
+                    </div>
+                </div>
+                <div class="item" style="background: red">
+                    <div class="itemMove ">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/touch.js"></script>
+    <script type="text/javascript">
+        var index = index;
+        console.log('123')
+
+        var toTop = document.getElementsByClassName('toTop'[0]);
+
+        toTop.onclick = function () {
+            console.log('123')
+        }
+        var div = document.getElementById('div')
+
+        console.log(index, "123")
+
+
+        var a = -12345
+        console.log(Math.abs(a/100))
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+/* 上滑提示 */
+.up .up_icon_one {
+    position: absolute;
+    z-index: 10;
+    bottom: 1rem;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    opacity: 0;
+    border: 3px solid red;
+    border-color: #ccc9c9 transparent transparent #ccc9c9;
+    animation: up 2s infinite;
+    -moz-animation: up 2s infinite;
+    /* Firefox */
+    -webkit-animation: up 2s infinite;
+    /* Safari 和 Chrome */
+    -o-animation: up 2s infinite;
+    /* Opera */
+}
+
+.up .up_icon_two {
+    position: absolute;
+    z-index: 10;
+    bottom: .25rem;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    opacity: 0;
+    border: 3px solid red;
+    border-color: #ccc9c9 transparent transparent #ccc9c9;
+    animation: up 2s infinite;
+    -moz-animation: up 2s infinite;
+    /* Firefox */
+    -webkit-animation: up 2s infinite;
+    /* Safari 和 Chrome */
+    -o-animation: up 2s infinite;
+    /* Opera */
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(45deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, -15px) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, -30px) rotate(45deg);
+    }
+}
+
+/* 第一页展示 */
+
+.styleOne {
+    width: 12.94rem;
+    height: 5rem;
+    position: absolute;
+    top: 70%;
+    color: white;
+    text-align: center;
+    line-height: 5rem;
+    text-shadow: 3px 3px 3px #ada2a2
+}
+
+.item_one {
+    animation: one 2s 1 forwards;
+    -moz-animation: one 2s 1 forwards;
+    /* Firefox */
+    -webkit-animation: one 2s 1 forwards;
+    /* Safari 和 Chrome */
+    -o-animation: one 2s 1 forwards;
+    /* Opera */
+}
+
+@keyframes one {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(50%, 0);
+    }
+}
+
+/*第二页展示*/
+
+.styleTwo {
+    position: relative;
+    width: 25rem;
+    height: 30rem;
+}
+
+.item_two {
+    animation: all 2s 1 forwards;
+    -moz-animation: all 2s 1 forwards;
+    /* Firefox */
+    -webkit-animation: all 2s 1 forwards;
+    /* Safari 和 Chrome */
+    -o-animation: all 2s 1 forwards;
+    /* Opera */
+}
+
+.one_first {
+    position: relative;
+    font-size: 3rem;
+    z-index: 1;
+    animation: one_first 3s linear 1 forwards;
+    transform: translate(-10, 0rem);
+}
+
+.one_second {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ccc9c9;
+    top: 2rem;
+    font-size: 0.5rem;
+    z-index: 5;
+}
+
+@keyframes one_first {
+    0% {
+        opacity: 0;
+        transform: translate(2rem, -10rem)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(2rem, 1rem)
+    }
+}
+
+.one_third {
+    animation: one_third 3s linear 1 forwards;
+    transform: translate(30rem, 0rem)
+}
+
+.one_third ul li {
+    list-style: none;
+    width: 13rem;
+    height: 2rem;
+    line-height: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    border-radius: 15px;
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes one_third {
+    0% {
+        opacity: 0;
+        transform: translate(30rem, 0rem)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(10rem, 1rem)
+    }
+}
+
+/* 第三页展示 */
+
+
+.third_box {
+    position: relative;
+    width: 414px;
+    height: 46rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.third_move_one {
+    position: absolute;
+    width: 6.25rem;
+    height: 6.25rem;
+    opacity: 0;
+    background: rgb(83, 64, 64);
+    border-radius: .5rem;
+    animation: third_move_one 2s linear forwards;
+}
+
+.third_move_one ul .third_li{
+    height: 2rem;
+    background: white;
+    width: 16rem;
+    margin-top: .6rem;
+    margin-left: .2rem;
+    border-radius: .1rem;
+    font-size: 1rem;
+    opacity: 0;
+}
+@keyframes third_move_one {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        width: 18.75rem;
+        height: 31.25rem;
+        opacity: .4;
+        transform: rotate(360deg);
+    }
+}
+
+.third_li_move{
+    animation: third_li_moves 1s linear forwards;
+}
+@keyframes third_li_moves{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
